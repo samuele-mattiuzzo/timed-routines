@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <button id="startBtn">Start counter!</button>
+        <p id="routine"></p>
+        <p id="demo">Click to start</p>
+        <button id="stopBtn">Stop counter!</button>
+    </div>
+
+<script>
+var c = 0,
+	routines = ["pull up", "push up", "damn"],
+    current_step = 0,
+    myTimer,
+    start = document.getElementById("startBtn"),
+    stop = document.getElementById("stopBtn");
+
+function myCounter() {
+    document.getElementById("demo").innerHTML = ++c;
+    if (c >= 60) {
+      clearInterval(myTimer);
+      c = 0;
+      document.getElementById("demo").innerHTML = c;
+      document.getElementById("routine").innerHTML = '';
+      current_step += 1;
+      startRoutine();
+    }
+}
+
+function startRoutine() {
+	if (current_step < routines.length) {
+      var current = routines[current_step];
+      document.getElementById("routine").innerHTML = current;
+      myTimer = setInterval(myCounter, 1000);
+    } else {
+      document.getElementById("routine").innerHTML = 'DONE';
+      document.getElementById("demo").innerHTML = '';
+    }
+}
+
+function reset() {
+	clearInterval(myTimer);
+	c = 0;
+	document.getElementById("demo").innerHTML = 'Click to start';
+    document.getElementById("routine").innerHTML = '';
+}
+
+
+window.onload = function() {
+  start.onclick = function(){
+    startRoutine();
+  }
+
+  stop.onclick = function(){
+    reset();
+  }
+}
+
+</script> 
+
+</body>
+</html>
+
