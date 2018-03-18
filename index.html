@@ -8,63 +8,18 @@
 <body>
 
     <div id="wrapper">
+        <select id="routinesList"></select>
         <button id="startBtn">Start counter!</button>
-        <p id="routine"></p>
-        <p id="demo">Click to start</p>
         <button id="stopBtn">Stop counter!</button>
+
+        <p id="routine"></p>
+        <p id="timer"></p>
+        <p id="repCount"></p>
+        <p id="stepCount"></p>
     </div>
 
-<script>
-var c = 0,
-	routines = ["pull up", "push up", "damn"],
-    current_step = 0,
-    myTimer,
-    start = document.getElementById("startBtn"),
-    stop = document.getElementById("stopBtn");
-
-function myCounter() {
-    document.getElementById("demo").innerHTML = ++c;
-    if (c >= 60) {
-      clearInterval(myTimer);
-      c = 0;
-      document.getElementById("demo").innerHTML = c;
-      document.getElementById("routine").innerHTML = '';
-      current_step += 1;
-      startRoutine();
-    }
-}
-
-function startRoutine() {
-	if (current_step < routines.length) {
-      var current = routines[current_step];
-      document.getElementById("routine").innerHTML = current;
-      myTimer = setInterval(myCounter, 1000);
-    } else {
-      document.getElementById("routine").innerHTML = 'DONE';
-      document.getElementById("demo").innerHTML = '';
-    }
-}
-
-function reset() {
-	clearInterval(myTimer);
-	c = 0;
-	document.getElementById("demo").innerHTML = 'Click to start';
-    document.getElementById("routine").innerHTML = '';
-}
-
-
-window.onload = function() {
-  start.onclick = function(){
-    startRoutine();
-  }
-
-  stop.onclick = function(){
-    reset();
-  }
-}
-
-</script> 
+    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
-
