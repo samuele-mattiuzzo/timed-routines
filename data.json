@@ -5,8 +5,57 @@ data = [
         "num_reps": 5,
         "rep_length": 60,
         "steps": [
+            "10 pull-ups | 10 push-ups",
+            "10 squats | 10 hanging leg curls"
+        ]
+    },
+
+    {
+        "name": "Warm up (with 5kg belt)",
+        "num_steps": 2,
+        "num_reps": 5,
+        "rep_length": 60,
+        "steps": [
             "5 pull-ups | 5 push-ups",
             "5 squats | 5 hanging leg curls"
+        ]
+    },
+
+    {
+        "name": "Abs 30 seconds on, 30 seconds off",
+        "num_steps": 10,
+        "num_reps": 1,
+        "rep_length": 30,
+        "steps": [
+            "Crunches",
+            "Rest",
+            "Left crunches",
+            "Rest",
+            "Right crunches",
+            "Rest",
+            "Leg raises (floor)",
+            "Rest",
+            "Leg raises (bench)",
+            "Rest"
+        ]
+    },
+
+    {
+        "name" : "10 minutes HIIT dumbbells",
+        "num_steps": 10,
+        "num_reps": 1,
+        "rep_length": 60,
+        "steps": [
+            "Tackling Squat to Press",
+            "Drop Squat to Biceps Curl",
+            "Muscle Jacks",
+            "Renegade Rows",
+            "Jacked climber / row press",
+            "Overhead Triceps Extensions",
+            "Side Lunge + Row (right side)",
+            "Side Lunge + Row (Left side)",
+            "Push ups",
+            "Plank"
         ]
     },
 
@@ -26,5 +75,23 @@ data = [
             "10 sec offset hang (4f + 2f) | 10 sec offset hang (2f + 4f)",
             "20 sec L-hang (4f)",
             "5 pull-ups (3f) | Dead hang to failure (3f)"
+        ]
+    },
+
+    {
+        "name" : "Beastmaker - f6c - 1000",
+        "num_steps": 6,
+        "num_reps": 1,
+        "rep_length": 10,
+        "steps": [
+        ]
+    }
+
+    {
+        "name" : "Beastmaker - f6c/f7c - 2000",
+        "num_steps": 6,
+        "num_reps": 1,
+        "rep_length": 10,
+        "steps": [
         ]
     }];

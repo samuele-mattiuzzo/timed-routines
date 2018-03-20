@@ -40,19 +40,16 @@ window.onload = function() {
         timer.innerHTML = ++c;
         if (c >= current_routine["rep_length"]) {
             clearInterval(myTimer);
-            if (current_rep >= current_routine["num_reps"]) {
-                current_rep = 0;
-                current_step += 1;
-            }
-
             if (current_step >= current_routine["num_steps"]) {
-                current_step = 0;
-                current_rep = 0;
-                routineEl.innerHTML = 'DONE';
-                timer.innerHTML = '';
+                reset();
             } else {
                 // new iteration
-                current_rep += 1;
+                if (current_rep >= current_routine["num_reps"]) {
+                    current_rep = 0;
+                    current_step += 1;
+                } else {
+                    current_rep += 1;
+                }
                 c = 0;
                 timer.innerHTML = c;
                 routineEl.innerHTML = '';
