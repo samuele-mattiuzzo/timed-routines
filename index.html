@@ -8,14 +8,18 @@
 <body>
 
     <div id="wrapper">
-        <select id="routinesList"></select>
-        <button id="startBtn">Start counter!</button>
-        <button id="stopBtn">Stop counter!</button>
+        <div class="controls">
+            <select id="routinesList"></select>
+            <button id="startBtn">Start counter!</button>
+            <button id="stopBtn">Stop counter!</button>
+        </div>
 
-        <p id="routine"></p>
-        <p id="timer"></p>
-        <p id="repCount"></p>
-        <p id="stepCount"></p>
+        <div class="info">
+            <p id="repCount"></p>
+            <p id="stepCount"></p>
+            <p id="routine"></p>
+            <p id="timer"></p>
+        </div>
     </div>
 
     <script type="text/javascript" src="data.json"></script>

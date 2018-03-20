@@ -1,16 +1,30 @@
 data = [
     {
-        "name": "Warm up - 10 minutes",
+        "name": "Warm up",
         "num_steps": 2,
         "num_reps": 5,
         "rep_length": 60,
-        "steps": ["5 pull-ups + 5 push-ups", "5 squats + 5 hanging leg curls"]
+        "steps": [
+            "5 pull-ups | 5 push-ups",
+            "5 squats | 5 hanging leg curls"
+        ]
     },
 
     {
-        "name" : "Rock Rings - 10 minutes",
-        "num_steps": 2,
-        "num_reps": 5,
+        "name" : "Rock Rings",
+        "num_steps": 10,
+        "num_reps": 1,
         "rep_length": 60,
-        "steps": ["5 pull-ups + 5 push-ups", "5 squats + 5 hanging leg curls"]
+        "steps": [
+            "3 pull-ups (jugs)",
+            "10 sec bent arm hang (3f) | 15 sec dead hang (2f)",
+            "2 offset pull-ups (4f + 2f) | 2 offset pull-ups (2f + 4f)",
+            "20 sec L-hang (4f) | 10 sec dead hang (3f)",
+            "5 pull-ups (4f)",
+            "20 sec bent arm hang (3f) | 10 sec dead hang (2f)",
+            "15 sec L-hang (4f) | 15 sec dead hang (4f)",
+            "10 sec offset hang (4f + 2f) | 10 sec offset hang (2f + 4f)",
+            "20 sec L-hang (4f)",
+            "5 pull-ups (3f) | Dead hang to failure (3f)"
+        ]
     }];

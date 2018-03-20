@@ -1,9 +1,9 @@
 window.onload = function() {
-    var c = 0,
-    	routines = data,
+    var routines = data,
         current_routine,
         current_step = 0,
         current_rep = 0,
+        c = 0,
         myTimer,
         start = document.getElementById("startBtn"),
         stop = document.getElementById("stopBtn"),
@@ -13,7 +13,9 @@ window.onload = function() {
         repCount = document.getElementById("repCount"),
         stepCount = document.getElementById("stepCount");
 
+    // Functions
     function createSelect() {
+        // creates a dropdown with all the available routines
         var result = '';
         for (var i=0; i<routines.length; i++) {
             result += '<option value="'+i+'">'+routines[i]["name"]+'</option>';
@@ -22,17 +24,22 @@ window.onload = function() {
     }
 
     function selectRoutine() {
+        // selects and assigns the current routine
         var selected = routinesList.options[routinesList.selectedIndex].value;
         current_routine = routines[selected];
     }
 
     function getStep() {
-        return current_routine["steps"][current_step];
+        // gets the next step from a routine
+        var cs = current_routine["steps"][current_step];
+        return cs.split(" | ").join("<br/>");
     }
 
     function myCounter() {
+        // main counter function
         timer.innerHTML = ++c;
         if (c >= current_routine["rep_length"]) {
+            clearInterval(myTimer);
             if (current_rep >= current_routine["num_reps"]) {
                 current_rep = 0;
                 current_step += 1;
@@ -41,7 +48,6 @@ window.onload = function() {
             if (current_step >= current_routine["num_steps"]) {
                 current_step = 0;
                 current_rep = 0;
-
                 routineEl.innerHTML = 'DONE';
                 timer.innerHTML = '';
             } else {
@@ -77,11 +83,13 @@ window.onload = function() {
     }
 
     start.onclick = function(){
+        clearInterval(myTimer);
         selectRoutine();
         startRoutine();
     }
 
     stop.onclick = function(){
+        clearInterval(myTimer);
         reset();
     }
 
