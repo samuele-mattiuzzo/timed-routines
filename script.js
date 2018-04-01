@@ -35,21 +35,38 @@ window.onload = function() {
         return cs.split(" | ").join("<br/>");
     }
 
+    function updateStep() {
+        routineEl.innerHTML = getStep();
+        repCount.innerHTML = 'Rep '+parseInt(current_rep+1)+' of '+current_routine["num_reps"];
+        stepCount.innerHTML = 'Step '+parseInt(current_step+1)+' of '+current_routine["num_steps"];
+    }
+
+    function done() {
+        reset();
+        routineEl.innerHTML = 'ROUTINE COMPLETE';
+    }
+
     function myCounter() {
         // main counter function
         timer.innerHTML = ++c;
         if (c >= current_routine["rep_length"]) {
+            // clear timer
             clearInterval(myTimer);
+
+            // next repetition
+            current_rep += 1;
+
+            // next exercise
+            if (current_rep >= current_routine["num_reps"]) {
+                current_rep = 0;
+                current_step += 1;
+            }
+
+            // end of routine
             if (current_step >= current_routine["num_steps"]) {
-                reset();
+                done();
             } else {
-                // new iteration
-                if (current_rep >= current_routine["num_reps"]) {
-                    current_rep = 0;
-                    current_step += 1;
-                } else {
-                    current_rep += 1;
-                }
+                // start repetition
                 c = 0;
                 timer.innerHTML = c;
                 routineEl.innerHTML = '';
@@ -60,10 +77,8 @@ window.onload = function() {
 
     function startRoutine() {
     	if (current_step < current_routine['num_steps']) {
-          routineEl.innerHTML = getStep();
-          repCount.innerHTML = 'Rep '+parseInt(current_rep+1)+' of '+current_routine["num_reps"];
-          stepCount.innerHTML = 'Step '+parseInt(current_step+1)+' of '+current_routine["num_steps"];
-          myTimer = setInterval(myCounter, 1000);
+            updateStep();
+            myTimer = setInterval(myCounter, 1000);
         }
     }
 
@@ -80,13 +95,12 @@ window.onload = function() {
     }
 
     start.onclick = function(){
-        clearInterval(myTimer);
+        reset();
         selectRoutine();
         startRoutine();
     }
 
     stop.onclick = function(){
-        clearInterval(myTimer);
         reset();
     }
 

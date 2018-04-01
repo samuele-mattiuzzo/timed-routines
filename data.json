@@ -41,25 +41,6 @@ data = [
     },
 
     {
-        "name" : "10 minutes HIIT dumbbells",
-        "num_steps": 10,
-        "num_reps": 1,
-        "rep_length": 60,
-        "steps": [
-            "Tackling Squat to Press",
-            "Drop Squat to Biceps Curl",
-            "Muscle Jacks",
-            "Renegade Rows",
-            "Jacked climber / row press",
-            "Overhead Triceps Extensions",
-            "Side Lunge + Row (right side)",
-            "Side Lunge + Row (Left side)",
-            "Push ups",
-            "Plank"
-        ]
-    },
-
-    {
         "name" : "Rock Rings",
         "num_steps": 10,
         "num_reps": 1,

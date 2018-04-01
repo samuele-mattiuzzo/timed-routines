@@ -1,34 +1,33 @@
 * {
+    background-color: black;
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     font-size: 48px;
-    background-color: black;
 }
 
 html, body {
+    font-size: 20px;
+    line-height: 1.5em;
+    margin: 0;
     max-height: 100%;
     max-width: 100%;
-    margin: 0;
-    line-height: 1.5em;
-    font-size: 20px;
 }
 
 #wrapper {
-    max-height: 100%;
     margin-top: 100px;
+    max-height: 100%;
     text-align: center;
 }
-
 
 .info {
     color: red;
-    text-align: center;
     padding-top: 50px;
+    text-align: center;
 }
 
 button, select {
-    border: 3px solid grey;
-    padding: 10px;
+    border: 5px solid grey;
     color: white;
+    padding: 10px;
 }
 
 #repCount,
@@ -39,21 +38,38 @@ button, select {
 #startBtn,
 #stopBtn {
     display: block;
+    margin-top: 40px;
     width: 100%;
-    margin-top: 50px;
+}
+
+#startBtn,
+#stopBtn {
+    display: inline-block;
+    width: 40%;
+}
+
+#startBtn { background-color: green; }
+#stopBtn { background-color: red; }
+
+#routine {
+    font-size: 60px;
+    line-height: 1.5em;
 }
 
 #timer {
-    text-align: center;
-    margin-top: 100px;
     color: white;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-top: 100px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 #routinesList {
-    padding-left: 22%;
-}
-
-#routine, #timer {
-    line-height: 1.5em;
-    font-size: 65px;
+    direction: rtl;
+    font-size: 32px;
+    padding-right: 5px;
+    text-align-last: center;
+    text-transform: uppercase;
 }
