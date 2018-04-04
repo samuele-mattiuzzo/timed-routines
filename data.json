@@ -2,6 +2,7 @@ data = [
     {
         "name": "Warm up - bodyweight",
         "description": "Complete the number of repetitions then rest for the remainder of the time",
+        "has_timer": true,
         "num_steps": 2,
         "num_reps": 5,
         "rep_length": 60,
@@ -14,6 +15,7 @@ data = [
     {
         "name": "Warm up - weighted belt",
         "description": "Complete the number of repetitions then rest for the remainder of the time",
+        "has_timer": true,
         "num_steps": 2,
         "num_reps": 5,
         "rep_length": 60,
@@ -26,6 +28,7 @@ data = [
     {
         "name": "Abs 30 seconds on, 30 seconds off",
         "description": "Do as many repetitions as you can in 30 seconds; plank as rest for 30 seconds",
+        "has_timer": true,
         "num_steps": 10,
         "num_reps": 1,
         "rep_length": 30,
@@ -45,10 +48,11 @@ data = [
 
     {
         "name": "GripMaster",
-        "description": "Hold each position 5 seconds, release and repeat 10 times. Rest for the remainder of the time",
+        "description": "Hold each position 5 seconds, release and repeat 10 times. Rest 10 seconds.",
+        "has_timer": false,
         "num_steps": 14,
         "num_reps": 3,
-        "rep_length": 75,
+        "rep_length": 0,
         "steps": [
             "Fingertip pinch (left hand)",
             "Fingertip pinch (right hand)",

@@ -91,7 +91,26 @@ window.onload = function() {
     }
 
     function doStep() {
+        // next repetition
+        current_rep += 1;
 
+        // next exercise
+        if (current_rep >= current_routine["num_reps"]) {
+            current_rep = 0;
+            current_step += 1;
+        }
+
+        // end of routine
+        if (current_step >= current_routine["num_steps"]) {
+            done();
+        } else {
+            // start repetition
+            c = 0;
+            timer.innerHTML = c;
+            routineEl.innerHTML = '';
+            routineDesc.innerHTML = '';
+            startRoutine();
+        }
     }
 
     function myCounter() {
@@ -100,29 +119,7 @@ window.onload = function() {
         if (c >= current_routine["rep_length"]) {
             // clear timer
             clearInterval(myTimer);
-
             doStep();
-            // next repetition
-            current_rep += 1;
-
-            // next exercise
-            if (current_rep >= current_routine["num_reps"]) {
-                current_rep = 0;
-                current_step += 1;
-            }
-
-            // end of routine
-            if (current_step >= current_routine["num_steps"]) {
-                done();
-            } else {
-                // start repetition
-                c = 0;
-                timer.innerHTML = c;
-                routineEl.innerHTML = '';
-                routineDesc.innerHTML = '';
-                startRoutine();
-            }
-        }
     }
 
     start.onclick = function(){
