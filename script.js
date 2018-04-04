@@ -10,6 +10,7 @@ window.onload = function() {
         routinesList = document.getElementById("routinesList"),
         timer = document.getElementById("timer"),
         routineEl = document.getElementById("routine"),
+        routineDesc = document.getElementById("description"),
         repCount = document.getElementById("repCount"),
         stepCount = document.getElementById("stepCount");
 
@@ -36,9 +37,40 @@ window.onload = function() {
     }
 
     function updateStep() {
+        var n_reps_total = current_routine["num_reps"],
+            n_steps_total = current_routine["num_steps"]
+            n_reps = parseInt(current_rep + 1),
+            n_steps = parseInt(current_step + 1),
+            description = current_routine["description"];
+
         routineEl.innerHTML = getStep();
-        repCount.innerHTML = 'Rep '+parseInt(current_rep+1)+' of '+current_routine["num_reps"];
-        stepCount.innerHTML = 'Step '+parseInt(current_step+1)+' of '+current_routine["num_steps"];
+        routineDesc.innerHTML = description;
+        repCount.innerHTML = 'Rep ' + n_reps + ' of ' + n_reps_total;
+        stepCount.innerHTML = 'Step ' + n_steps + ' of '+ n_steps_total;
+    }
+
+    function nextStep() {
+
+    }
+
+    function startRoutine() {
+    	if (current_step < current_routine['num_steps']) {
+            updateStep();
+            myTimer = setInterval(myCounter, 1000);
+        }
+    }
+
+    function reset() {
+    	clearInterval(myTimer);
+    	c = 0;
+        current_rep = 0;
+        current_step = 0;
+        current_routine = 0;
+    	timer.innerHTML = '';
+        routineEl.innerHTML = '';
+        repCount.innerHTML = '';
+        stepCount.innerHTML = '';
+        routineDesc.innerHTML = '';
     }
 
     function done() {
@@ -70,28 +102,10 @@ window.onload = function() {
                 c = 0;
                 timer.innerHTML = c;
                 routineEl.innerHTML = '';
+                routineDesc.innerHTML = '';
                 startRoutine();
             }
         }
-    }
-
-    function startRoutine() {
-    	if (current_step < current_routine['num_steps']) {
-            updateStep();
-            myTimer = setInterval(myCounter, 1000);
-        }
-    }
-
-    function reset() {
-    	clearInterval(myTimer);
-    	c = 0;
-        current_rep = 0;
-        current_step = 0;
-        current_routine = 0;
-    	timer.innerHTML = '';
-        routineEl.innerHTML = '';
-        repCount.innerHTML = '';
-        stepCount.innerHTML = '';
     }
 
     start.onclick = function(){

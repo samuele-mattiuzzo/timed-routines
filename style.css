@@ -36,7 +36,8 @@ button, select {
 #timer,
 #routinesList,
 #startBtn,
-#stopBtn {
+#stopBtn,
+#description {
     display: block;
     margin-top: 40px;
     width: 100%;
@@ -46,6 +47,11 @@ button, select {
 #stopBtn {
     display: inline-block;
     width: 40%;
+}
+
+#description {
+    color: white;
+    font-size: 32px;
 }
 
 #startBtn { background-color: green; }
