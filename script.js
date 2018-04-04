@@ -7,6 +7,7 @@ window.onload = function() {
         myTimer,
         start = document.getElementById("startBtn"),
         stop = document.getElementById("stopBtn"),
+        next = document.getElementById("nextBtn"),
         routinesList = document.getElementById("routinesList"),
         timer = document.getElementById("timer"),
         routineEl = document.getElementById("routine"),
@@ -50,13 +51,24 @@ window.onload = function() {
     }
 
     function nextStep() {
+        // increments the step by one
+
+        current_step = current_step + 1;
+
+        //
 
     }
 
     function startRoutine() {
     	if (current_step < current_routine['num_steps']) {
             updateStep();
-            myTimer = setInterval(myCounter, 1000);
+            if (current_routine['has_timer'] == true) {
+                // it's a timed routine
+                myTimer = setInterval(myCounter, 1000);
+            } else {
+                // manual step through
+                doStep();
+            }
         }
     }
 
@@ -78,6 +90,10 @@ window.onload = function() {
         routineEl.innerHTML = 'ROUTINE COMPLETE';
     }
 
+    function doStep() {
+
+    }
+
     function myCounter() {
         // main counter function
         timer.innerHTML = ++c;
@@ -85,6 +101,7 @@ window.onload = function() {
             // clear timer
             clearInterval(myTimer);
 
+            doStep();
             // next repetition
             current_rep += 1;
 

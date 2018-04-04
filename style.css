@@ -37,25 +37,30 @@ button, select {
 #routinesList,
 #startBtn,
 #stopBtn,
-#description {
+#nextBtn {
     display: block;
     margin-top: 40px;
     width: 100%;
 }
 
 #startBtn,
-#stopBtn {
+#stopBtn,
+#nextBtn {
     display: inline-block;
-    width: 40%;
+    width: 30%;
 }
 
 #description {
     color: white;
+    display: block;
     font-size: 32px;
+    margin-top: 30px;
+    width: 85%;
 }
 
 #startBtn { background-color: green; }
 #stopBtn { background-color: red; }
+#nextBtn { background-color: yellow; }
 
 #routine {
     font-size: 60px;
