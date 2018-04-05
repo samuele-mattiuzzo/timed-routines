@@ -50,23 +50,16 @@ window.onload = function() {
         stepCount.innerHTML = 'Step ' + n_steps + ' of '+ n_steps_total;
     }
 
-    function nextStep() {
-        // increments the step by one
-
-        current_step = current_step + 1;
-
-        //
-
-    }
-
     function startRoutine() {
     	if (current_step < current_routine['num_steps']) {
-            updateStep();
+
             if (current_routine['has_timer'] == true) {
                 // it's a timed routine
+                updateStep();
                 myTimer = setInterval(myCounter, 1000);
             } else {
                 // manual step through
+                updateStep();
                 doStep();
             }
         }
@@ -109,7 +102,6 @@ window.onload = function() {
             timer.innerHTML = c;
             routineEl.innerHTML = '';
             routineDesc.innerHTML = '';
-            startRoutine();
         }
     }
 
@@ -120,6 +112,8 @@ window.onload = function() {
             // clear timer
             clearInterval(myTimer);
             doStep();
+            startRoutine();
+        }
     }
 
     start.onclick = function(){
@@ -130,6 +124,10 @@ window.onload = function() {
 
     stop.onclick = function(){
         reset();
+    }
+
+    next.onclick = function(){
+        doStep();
     }
 
     createSelect();
