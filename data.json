@@ -1,73 +1,5 @@
 data = [
     {
-        "name": "Warm up - bodyweight",
-        "description": "Complete the number of repetitions then rest for the remainder of the time",
-        "num_steps": 2,
-        "num_reps": 5,
-        "rep_length": 60,
-        "steps": [
-            "10 pull-ups | 10 push-ups",
-            "10 squats | 10 hanging leg curls"
-        ]
-    },
-
-    {
-        "name": "Warm up - weighted belt",
-        "description": "Complete the number of repetitions then rest for the remainder of the time",
-        "num_steps": 2,
-        "num_reps": 5,
-        "rep_length": 60,
-        "steps": [
-            "5 pull-ups | 5 push-ups",
-            "5 squats | 5 hanging leg curls"
-        ]
-    },
-
-    {
-        "name": "Abs 30 seconds on, 30 seconds off",
-        "description": "Do as many repetitions as you can in 30 seconds; plank as rest for 30 seconds",
-        "num_steps": 10,
-        "num_reps": 1,
-        "rep_length": 30,
-        "steps": [
-            "Crunches",
-            "Rest - plank",
-            "Left crunches",
-            "Rest - plank",
-            "Right crunches",
-            "Rest - plank",
-            "Leg raises (floor)",
-            "Rest - plank",
-            "Leg raises (bench)",
-            "Rest - plank"
-        ]
-    },
-
-    {
-        "name": "GripMaster",
-        "description": "Hold each position 5 seconds, release and repeat 10 times. Rest for the remainder of the time",
-        "num_steps": 14,
-        "num_reps": 3,
-        "rep_length": 75,
-        "steps": [
-            "Fingertip pinch (left hand)",
-            "Fingertip pinch (right hand)",
-            "Thumb + pinkie pinch (left hand)",
-            "Thumb + pinkie pinch (right hand)",
-            "Power grip (left hand)",
-            "Power grip (right hand)",
-            "Thumb pinch (left hand)",
-            "Thumb pinch (right hand)",
-            "Three fingers pinch (left hand)",
-            "Three fingers pinch (right hand)",
-            "Hook - pam + 4 fingers (left hand)",
-            "Hook - pam + 4 fingers (right hand)",
-            "Tricep press (left hand)",
-            "Tricep press (right hand)"
-        ]
-    },
-
-    {
         "name" : "Rock Rings",
         "description": "Complete the number of repetitions then rest for the remainder of the time",
         "num_steps": 10,
@@ -85,24 +17,5 @@ data = [
             "20 sec L-hang (4f)",
             "5 pull-ups (3f) | Dead hang to failure (3f)"
         ]
-    },
-
-    {
-        "name" : "Beastmaker - f6c - 1000",
-        "description": "",
-        "num_steps": 6,
-        "num_reps": 1,
-        "rep_length": 10,
-        "steps": [
-        ]
-    },
-
-    {
-        "name" : "Beastmaker - f6c/f7c - 2000",
-        "description": "",
-        "num_steps": 6,
-        "num_reps": 1,
-        "rep_length": 10,
-        "steps": [
-        ]
-    }];
+    }
+];
